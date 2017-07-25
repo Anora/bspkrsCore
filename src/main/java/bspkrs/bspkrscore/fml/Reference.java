@@ -26,13 +26,13 @@ public class Reference
 
         MC_VERSION = prop.getProperty("version.minecraft");
     }
-    public static final String  MODID        = "bspkrscore";
-    public static final String  NAME         = "bspkrsCore";
-    public static final String  MC_VERSION;
-    public static final String  MINECRAFT    = "minecraft";
-    public static final String  PROXY_COMMON = "bspkrs.bspkrscore.fml.CommonProxy";
-    public static final String  PROXY_CLIENT = "bspkrs.bspkrscore.fml.ClientProxy";
-    public static final String  GUI_FACTORY  = "bspkrs.bspkrscore.fml.gui.ModGuiFactoryHandler";
+    public static final String MODID        = "bspkrscore";
+    public static final String NAME         = "bspkrsCore";
+    public static final String MC_VERSION;
+    public static final String MINECRAFT    = "minecraft";
+    public static final String PROXY_COMMON = "bspkrs.bspkrscore.fml.CommonProxy";
+    public static final String PROXY_CLIENT = "bspkrs.bspkrscore.fml.ClientProxy";
+    public static final String GUI_FACTORY  = "bspkrs.bspkrscore.fml.gui.ModGuiFactoryHandler";
 
-    public static Configuration config       = null;
+    public static Configuration config = null;
 }

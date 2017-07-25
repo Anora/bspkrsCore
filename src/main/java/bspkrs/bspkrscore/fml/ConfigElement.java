@@ -12,16 +12,16 @@ public enum ConfigElement
             "The timeout in milliseconds for the version update check.", INTEGER),
     GENERATE_UNIQUE_NAMES_FILE("generateUniqueNamesFile", "bspkrs.configgui.generateUniqueNamesFile",
             "When true a file called UniqueNames.txt will be generated in the config folder for convenience. " +
-                    "The names found in the file are the string representation of blocks and items in Minecraft. " +
-                    "Mods such as Treecapitator and StartingInventory use them in their config files since IDs are gone.", BOOLEAN),
+            "The names found in the file are the string representation of blocks and items in Minecraft. " +
+            "Mods such as Treecapitator and StartingInventory use them in their config files since IDs are gone.", BOOLEAN),
     SHOW_MAIN_MENU_MOBS("showMainMenuMobs", "bspkrs.configgui.showMainMenuMobs",
             "Set to true to show your logged-in player and a random mob on the main menu, false to disable.", BOOLEAN);
 
-    private String        key;
-    private String        langKey;
-    private String        desc;
+    private String key;
+    private String langKey;
+    private String desc;
     private Property.Type propertyType;
-    private String[]      validStrings;
+    private String[] validStrings;
 
     private ConfigElement(String key, String langKey, String desc, Property.Type propertyType, String[] validStrings)
     {

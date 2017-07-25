@@ -8,7 +8,7 @@
     "mcversion": "${minecraft_version}",
     "url": "http://www.minecraftforum.net/topic/1114612-/",
     "updateUrl": "",
-    "authorList": [ "DaftPVF", "bspkrs", "Lunatrius", "BlueAnanas", "ZenCoder" ],
+    "authorList": [ "DaftPVF", "bspkrs", "Lunatrius", "BlueAnanas", "vrackfall", "ZenCoder" ],
     "credits": "Much of this code was originally part of DaftPVF's mods that I maintain.",
     "logoFile": "",
     "screenshots": [],

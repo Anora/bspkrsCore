@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ColorThreshold implements Comparable<ColorThreshold>
 {
-    public int    threshold;
+    public int threshold;
     public String colorCode;
 
     public ColorThreshold(int t, String c)

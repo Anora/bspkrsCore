@@ -7,11 +7,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameData;
 
-@Deprecated // TODO: replace with a IBlockState implementation
 public class BlockID
 {
     public final String id;
-    public final int    metadata;
+    public final int metadata;
 
     public BlockID(String id, int metadata)
     {
@@ -116,19 +115,19 @@ public class BlockID
         if (!(obj instanceof BlockID))
             return false;
 
-        if ((((BlockID) obj).id != null) && !((BlockID) obj).id.equals(id))
+        if ((((BlockID)obj).id != null) && !((BlockID)obj).id.equals(id))
             return false;
-        else if ((((BlockID) obj).id == null) && (id != null))
+        else if ((((BlockID)obj).id == null) && (id != null))
             return false;
 
         if (obj instanceof ModulusBlockID)
         {
-            ModulusBlockID o = (ModulusBlockID) obj;
+            ModulusBlockID o = (ModulusBlockID)obj;
             return (metadata % o.metadataModulus) == (o.metadata % o.metadataModulus);
         }
         else
         {
-            BlockID o = (BlockID) obj;
+            BlockID o = (BlockID)obj;
             if ((o.metadata == -1) || (metadata == -1))
                 return true;
             else

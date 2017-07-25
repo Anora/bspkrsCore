@@ -155,7 +155,7 @@ public final class CommonUtils
 
     public static int[] stringToBlock(String string)
     {
-        int[] values = new int[] { 0, -1 };
+        int[] values = new int[] {0, -1};
         String[] src = string.split(",");
         if (src.length < 1)
             return values;
@@ -276,8 +276,8 @@ public final class CommonUtils
 
     public void playAtPitch(int i, World world, EntityPlayer entityplayer)
     {
-        float f = (float) Math.pow(2D, (i - 12) / 12D);
-        world.playSound(entityplayer, entityplayer.getPosition(), SoundEvents.BLOCK_NOTE_PLING, SoundCategory.getByName("block"), 0.5F, f);
+        float f = (float)Math.pow(2D, (i - 12) / 12D);
+        world.playSound(entityplayer, entityplayer.getPosition(), SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.5F, f);
     }
 
     public static boolean moveBlock(World world, BlockPos src, BlockPos tgt, boolean allowBlockReplacement)
@@ -290,26 +290,26 @@ public final class CommonUtils
         if (!world.isRemote && !world.isAirBlock(src) && (world.isAirBlock(tgt) || allowBlockReplacement))
         {
             IBlockState state = world.getBlockState(src);
-    
+
             world.setBlockState(tgt, state, notifyFlag);
-    
+
             TileEntity te = world.getTileEntity(src);
             if (te != null)
             {
                 NBTTagCompound nbt = new NBTTagCompound();
                 te.writeToNBT(nbt);
-    
+
                 nbt.setInteger("x", tgt.getX());
                 nbt.setInteger("y", tgt.getY());
                 nbt.setInteger("z", tgt.getZ());
-    
+
                 te = world.getTileEntity(tgt);
                 if (te != null)
                     te.readFromNBT(nbt);
-    
+
                 world.removeTileEntity(src);
             }
-    
+
             world.setBlockToAir(src);
             return true;
         }
@@ -338,7 +338,7 @@ public final class CommonUtils
 
     public static int getSphericalDistance(BlockPos startPos, BlockPos endPos)
     {
-        return (int) Math.round(Math.sqrt(CommonUtils.sqr(endPos.getX() - startPos.getX())
+        return (int)Math.round(Math.sqrt(CommonUtils.sqr(endPos.getX() - startPos.getX())
                 + CommonUtils.sqr(endPos.getZ() - startPos.getZ()) + CommonUtils.sqr(endPos.getY() - startPos.getY())));
     }
 
@@ -409,8 +409,8 @@ public final class CommonUtils
 
     public static String getMCTimeString(long worldTime, long fmt)
     {
-        long HH = (int) (((worldTime / 1000L) + 6) % 24L);
-        int MM = (int) (((worldTime % 1000L) / 1000.0D) * 60.0D);
+        long HH = (int)(((worldTime / 1000L) + 6) % 24L);
+        int MM = (int)(((worldTime % 1000L) / 1000.0D) * 60.0D);
         boolean am = HH < 12;
         HH = HH % fmt;
         String hour = "";
@@ -464,22 +464,22 @@ public final class CommonUtils
 
     public static String[] loadTextFromURL(URL url, Logger logger)
     {
-        return loadTextFromURL(url, logger, new String[] { "" }, 0);
+        return loadTextFromURL(url, logger, new String[] {""}, 0);
     }
 
     public static String[] loadTextFromURL(URL url, Logger logger, int timeoutMS)
     {
-        return loadTextFromURL(url, logger, new String[] { "" }, timeoutMS);
+        return loadTextFromURL(url, logger, new String[] {""}, timeoutMS);
     }
 
     public static String[] loadTextFromURL(URL url, Logger logger, String defaultValue)
     {
-        return loadTextFromURL(url, logger, new String[] { defaultValue }, 0);
+        return loadTextFromURL(url, logger, new String[] {defaultValue}, 0);
     }
 
     public static String[] loadTextFromURL(URL url, Logger logger, String defaultValue, int timeoutMS)
     {
-        return loadTextFromURL(url, logger, new String[] { defaultValue }, timeoutMS);
+        return loadTextFromURL(url, logger, new String[] {defaultValue}, timeoutMS);
     }
 
     public static String[] loadTextFromURL(URL url, Logger logger, String[] defaultValue)
@@ -569,8 +569,8 @@ public final class CommonUtils
         double y = (player.prevPosY + ((player.posY - player.prevPosY) * scale) + 1.62D);
         double z = player.prevPosZ + ((player.posZ - player.prevPosZ) * scale);
         Vec3d vector1 = new Vec3d(x, y, z);
-        float cosYaw = MathHelper.cos((-yaw * 0.017453292F) - (float) Math.PI);
-        float sinYaw = MathHelper.sin((-yaw * 0.017453292F) - (float) Math.PI);
+        float cosYaw = MathHelper.cos((-yaw * 0.017453292F) - (float)Math.PI);
+        float sinYaw = MathHelper.sin((-yaw * 0.017453292F) - (float)Math.PI);
         float cosPitch = -MathHelper.cos(-pitch * 0.017453292F);
         float sinPitch = MathHelper.sin(-pitch * 0.017453292F);
         float pitchAdjustedSinYaw = sinYaw * cosPitch;
@@ -578,7 +578,7 @@ public final class CommonUtils
         double distance = 500D;
         if ((player instanceof EntityPlayerMP) && restrict)
         {
-            distance = ((EntityPlayerMP) player).interactionManager.getBlockReachDistance();
+            distance = ((EntityPlayerMP)player).interactionManager.getBlockReachDistance();
         }
         Vec3d vector2 = vector1.addVector(pitchAdjustedSinYaw * distance, sinPitch * distance, pitchAdjustedCosYaw * distance);
         return player.world.rayTraceBlocks(vector1, vector2);

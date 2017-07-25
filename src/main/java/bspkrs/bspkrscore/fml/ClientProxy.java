@@ -8,5 +8,8 @@ public class ClientProxy extends CommonProxy
 {
     @Override
     protected void registerGameTickHandler()
-    {}
+    {
+        if (BSCClientTicker.allowUpdateCheck)
+            new BSCClientTicker();
+    }
 }

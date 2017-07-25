@@ -4,11 +4,11 @@ import java.util.HashMap;
 
 import net.minecraft.client.settings.KeyBinding;
 
-import net.minecraftforge.common.MinecraftForge;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
@@ -21,9 +21,9 @@ public abstract class InputEventListener
 {
     private static HashMap<KeyBinding, InputEventListener> instances = new HashMap<KeyBinding, InputEventListener>();
 
-    protected KeyBinding                                   keyBinding;
-    protected boolean                                      isKeyDown;
-    protected boolean                                      allowRepeats;
+    protected KeyBinding keyBinding;
+    protected boolean isKeyDown;
+    protected boolean allowRepeats;
 
     public InputEventListener(KeyBinding keyBinding, boolean allowRepeats)
     {
@@ -79,7 +79,7 @@ public abstract class InputEventListener
     {
         if (isRegistered(kb))
         {
-            MinecraftForge.EVENT_BUS.unregister(instances.get(kb));
+            FMLCommonHandler.instance().bus().unregister(instances.get(kb));
             instances.remove(kb);
         }
     }

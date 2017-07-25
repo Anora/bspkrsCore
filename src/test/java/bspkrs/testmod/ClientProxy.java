@@ -1,9 +1,14 @@
 package bspkrs.testmod;
 
+import net.minecraftforge.fml.common.FMLCommonHandler;
+
+@SuppressWarnings("deprecation")
 public class ClientProxy extends CommonProxy
 {
-    @Override
+    @Deprecated
     protected void registerTickHandler()
     {
+        if (!TMTicker.isRegistered())
+            FMLCommonHandler.instance().bus().register(new TMTicker());
     }
 }

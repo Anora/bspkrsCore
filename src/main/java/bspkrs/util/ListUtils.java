@@ -15,7 +15,7 @@ public class ListUtils
         return r.replaceFirst(delimiter, "");
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static String getListAsUniqueDelimitedString(List<?> list, String delimiter)
     {
         String r = "";

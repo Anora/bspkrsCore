@@ -17,8 +17,8 @@ import org.lwjgl.opengl.GL11;
 
 public final class HUDUtils
 {
-    private static int[] colorCodes = new int[] { 0, 170, 43520, 43690, 11141120, 11141290, 16755200, 11184810, 5592405, 5592575, 5635925, 5636095, 16733525, 16733695, 16777045, 16777215,
-                                    0, 42, 10752, 10794, 2752512, 2752554, 2763264, 2763306, 1381653, 1381695, 1392405, 1392447, 4134165, 4134207, 4144917, 4144959 };
+    private static int[] colorCodes = new int[] {0, 170, 43520, 43690, 11141120, 11141290, 16755200, 11184810, 5592405, 5592575, 5635925, 5636095, 16733525, 16733695, 16777045, 16777215,
+                                    0, 42, 10752, 10794, 2752512, 2752554, 2763264, 2763306, 1381653, 1381695, 1392405, 1392447, 4134165, 4134207, 4144917, 4144959};
 
     public static int getColorCode(char c, boolean isLighter)
     {
@@ -30,16 +30,26 @@ public final class HUDUtils
      * and filler. It is assumed that the desired texture ResourceLocation object has been bound using
      * Minecraft.getMinecraft().getTextureManager().bindTexture(resourceLocation).
      * 
-     * @param x x axis offset
-     * @param y y axis offset
-     * @param u bound resource location image x offset
-     * @param v bound resource location image y offset
-     * @param width the desired box width
-     * @param height the desired box height
-     * @param textureWidth the width of the box texture in the resource location image
-     * @param textureHeight the height of the box texture in the resource location image
-     * @param borderSize the size of the box's borders
-     * @param zLevel the zLevel to draw at
+     * @param x
+     *            x axis offset
+     * @param y
+     *            y axis offset
+     * @param u
+     *            bound resource location image x offset
+     * @param v
+     *            bound resource location image y offset
+     * @param width
+     *            the desired box width
+     * @param height
+     *            the desired box height
+     * @param textureWidth
+     *            the width of the box texture in the resource location image
+     * @param textureHeight
+     *            the height of the box texture in the resource location image
+     * @param borderSize
+     *            the size of the box's borders
+     * @param zLevel
+     *            the zLevel to draw at
      */
     public static void drawContinuousTexturedBox(int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight,
             int borderSize, float zLevel)
@@ -52,17 +62,28 @@ public final class HUDUtils
      * and filler. The provided ResourceLocation object will be bound using
      * Minecraft.getMinecraft().getTextureManager().bindTexture(resourceLocation).
      * 
-     * @param res the ResourceLocation object that contains the desired image
-     * @param x x axis offset
-     * @param y y axis offset
-     * @param u bound resource location image x offset
-     * @param v bound resource location image y offset
-     * @param width the desired box width
-     * @param height the desired box height
-     * @param textureWidth the width of the box texture in the resource location image
-     * @param textureHeight the height of the box texture in the resource location image
-     * @param borderSize the size of the box's borders
-     * @param zLevel the zLevel to draw at
+     * @param res
+     *            the ResourceLocation object that contains the desired image
+     * @param x
+     *            x axis offset
+     * @param y
+     *            y axis offset
+     * @param u
+     *            bound resource location image x offset
+     * @param v
+     *            bound resource location image y offset
+     * @param width
+     *            the desired box width
+     * @param height
+     *            the desired box height
+     * @param textureWidth
+     *            the width of the box texture in the resource location image
+     * @param textureHeight
+     *            the height of the box texture in the resource location image
+     * @param borderSize
+     *            the size of the box's borders
+     * @param zLevel
+     *            the zLevel to draw at
      */
     public static void drawContinuousTexturedBox(ResourceLocation res, int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight,
             int borderSize, float zLevel)
@@ -75,20 +96,34 @@ public final class HUDUtils
      * and filler. The provided ResourceLocation object will be bound using
      * Minecraft.getMinecraft().getTextureManager().bindTexture(resourceLocation).
      * 
-     * @param res the ResourceLocation object that contains the desired image
-     * @param x x axis offset
-     * @param y y axis offset
-     * @param u bound resource location image x offset
-     * @param v bound resource location image y offset
-     * @param width the desired box width
-     * @param height the desired box height
-     * @param textureWidth the width of the box texture in the resource location image
-     * @param textureHeight the height of the box texture in the resource location image
-     * @param topBorder the size of the box's top border
-     * @param bottomBorder the size of the box's bottom border
-     * @param leftBorder the size of the box's left border
-     * @param rightBorder the size of the box's right border
-     * @param zLevel the zLevel to draw at
+     * @param res
+     *            the ResourceLocation object that contains the desired image
+     * @param x
+     *            x axis offset
+     * @param y
+     *            y axis offset
+     * @param u
+     *            bound resource location image x offset
+     * @param v
+     *            bound resource location image y offset
+     * @param width
+     *            the desired box width
+     * @param height
+     *            the desired box height
+     * @param textureWidth
+     *            the width of the box texture in the resource location image
+     * @param textureHeight
+     *            the height of the box texture in the resource location image
+     * @param topBorder
+     *            the size of the box's top border
+     * @param bottomBorder
+     *            the size of the box's bottom border
+     * @param leftBorder
+     *            the size of the box's left border
+     * @param rightBorder
+     *            the size of the box's right border
+     * @param zLevel
+     *            the zLevel to draw at
      */
     public static void drawContinuousTexturedBox(ResourceLocation res, int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight,
             int topBorder, int bottomBorder, int leftBorder, int rightBorder, float zLevel)
@@ -102,19 +137,32 @@ public final class HUDUtils
      * and filler. It is assumed that the desired texture ResourceLocation object has been bound using
      * Minecraft.getMinecraft().getTextureManager().bindTexture(resourceLocation).
      * 
-     * @param x x axis offset
-     * @param y y axis offset
-     * @param u bound resource location image x offset
-     * @param v bound resource location image y offset
-     * @param width the desired box width
-     * @param height the desired box height
-     * @param textureWidth the width of the box texture in the resource location image
-     * @param textureHeight the height of the box texture in the resource location image
-     * @param topBorder the size of the box's top border
-     * @param bottomBorder the size of the box's bottom border
-     * @param leftBorder the size of the box's left border
-     * @param rightBorder the size of the box's right border
-     * @param zLevel the zLevel to draw at
+     * @param x
+     *            x axis offset
+     * @param y
+     *            y axis offset
+     * @param u
+     *            bound resource location image x offset
+     * @param v
+     *            bound resource location image y offset
+     * @param width
+     *            the desired box width
+     * @param height
+     *            the desired box height
+     * @param textureWidth
+     *            the width of the box texture in the resource location image
+     * @param textureHeight
+     *            the height of the box texture in the resource location image
+     * @param topBorder
+     *            the size of the box's top border
+     * @param bottomBorder
+     *            the size of the box's bottom border
+     * @param leftBorder
+     *            the size of the box's left border
+     * @param rightBorder
+     *            the size of the box's right border
+     * @param zLevel
+     *            the zLevel to draw at
      */
     public static void drawContinuousTexturedBox(int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight,
             int topBorder, int bottomBorder, int leftBorder, int rightBorder, float zLevel)
@@ -196,8 +244,8 @@ public final class HUDUtils
         {
             if (itemStack.isItemDamaged() && showDamageBar)
             {
-                int var11 = (int) Math.round(13.0D - ((itemStack.getItemDamage() * 13.0D) / itemStack.getMaxDamage()));
-                int var7 = (int) Math.round(255.0D - ((itemStack.getItemDamage() * 255.0D) / itemStack.getMaxDamage()));
+                int var11 = (int)Math.round(13.0D - ((itemStack.getItemDamage() * 13.0D) / itemStack.getMaxDamage()));
+                int var7 = (int)Math.round(255.0D - ((itemStack.getItemDamage() * 255.0D) / itemStack.getMaxDamage()));
                 GlStateManager.disableLighting();
                 GlStateManager.disableDepth();
                 GlStateManager.disableTexture2D();
@@ -251,10 +299,10 @@ public final class HUDUtils
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
         int b = (color >> 0) & 0xFF;
-        worldRenderer.pos(x + 0, y + 0, 0.0D).color(r, g, b, a).endVertex();
-        worldRenderer.pos(x + 0, y + height, 0.0D).color(r, g, b, a).endVertex();
-        worldRenderer.pos(x + width, y + height, 0.0D).color(r, g, b, a).endVertex();
-        worldRenderer.pos(x + width, y + 0, 0.0D).color(r, g, b, a).endVertex();
+        worldRenderer.pos((x + 0), (y + 0), 0.0D).color(r, g, b, a).endVertex();
+        worldRenderer.pos((x + 0), (y + height), 0.0D).color(r, g, b, a).endVertex();
+        worldRenderer.pos((x + width), (y + height), 0.0D).color(r, g, b, a).endVertex();
+        worldRenderer.pos((x + width), (y + 0), 0.0D).color(r, g, b, a).endVertex();
         tessellator.draw();
     }
 
