@@ -5,7 +5,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameData;
 
 public class BlockID
 {
@@ -25,12 +24,12 @@ public class BlockID
 
     public BlockID(Block block, int metadata)
     {
-        this(GameData.getBlockRegistry().getNameForObject(block).toString(), metadata);
+        this(Block.REGISTRY.getNameForObject(block).toString(), metadata);
     }
 
     public BlockID(Block block)
     {
-        this(GameData.getBlockRegistry().getNameForObject(block).toString(), -1);
+        this(Block.REGISTRY.getNameForObject(block).toString(), -1);
     }
 
     public BlockID(Block block, IBlockState state)
@@ -60,7 +59,7 @@ public class BlockID
 
     public Block getBlock()
     {
-        return GameData.getBlockRegistry().getObject(new ResourceLocation(id));
+        return Block.REGISTRY.getObject(new ResourceLocation(id));
     }
 
     public static BlockID parse(String format)

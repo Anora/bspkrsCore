@@ -2,7 +2,6 @@ package bspkrs.util;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameData;
 
 public class ItemID
 {
@@ -35,12 +34,12 @@ public class ItemID
 
     public ItemID(Item item, int damage)
     {
-        this(GameData.getItemRegistry().getNameForObject(item).toString(), damage);
+        this(Item.REGISTRY.getNameForObject(item).toString(), damage);
     }
 
     public ItemID(Item item)
     {
-        this(GameData.getItemRegistry().getNameForObject(item).toString(), -1);
+        this(Item.REGISTRY.getNameForObject(item).toString(), -1);
     }
 
     public ItemID(String format, String delimiter)
