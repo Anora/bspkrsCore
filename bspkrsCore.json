@@ -7,7 +7,7 @@
     "description": "bspkrsCore contains shared classes used by all mods released by bspkrs.",
     "urls": [
         { "type": "website", "url": "mcf:1114612" },
-        { "type": "source", "url": "https://github.com/bspkrs/bspkrsCore" }
+        { "type": "source", "url": "https://github.com/bspkrs/bspkrsCore" },
         { "type": "issues", "url": "https://github.com/bspkrs/bspkrsCore" }
     ],
     "license": "CC BY-NC-SA 3.0",
@@ -18,13 +18,11 @@
         "Author": [ "bspkrs" ],
         "Credits": [ "DaftPVF", "Risugami", "LexManos" ]
     },
-    "versions": [
-        {
-            "mcCompat": [ "1.6.4" ],
-            "name": "v5.3(1.6.4)",
-            "downloadType": "sequential",
-            "installType": "forgeMod",
-            "url": "http://adf.ly/1599906/bspk.rs/MC/bspkrsCore/%5B1.6.4%5DbspkrsCorev5.3.zip"
-        }
-    ]
+    "versions": [{
+        "mcCompat": [ "1.6.4" ],
+        "name": "v5.3(1.6.4)",
+        "downloadType": "sequential",
+        "installType": "forgeMod",
+        "url": "http://adf.ly/1599906/bspk.rs/MC/bspkrsCore/%5B1.6.4%5DbspkrsCorev5.3.zip"
+    }]
 }

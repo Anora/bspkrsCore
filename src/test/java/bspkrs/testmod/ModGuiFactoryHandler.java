@@ -6,7 +6,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.client.IModGuiFactory;
 
-@SuppressWarnings("deprecation")
 public class ModGuiFactoryHandler implements IModGuiFactory
 {
     @Override
@@ -27,20 +26,8 @@ public class ModGuiFactoryHandler implements IModGuiFactory
         return new GuiTestModConfig(parentScreen);
     }
     
-    @Deprecated
-    public Class<? extends GuiScreen> mainConfigGuiClass()
-    {
-        return GuiTestModConfig.class;
-    }
-    
     @Override
     public Set<RuntimeOptionCategoryElement> runtimeGuiCategories()
-    {
-        return null;
-    }
-    
-    @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element)
     {
         return null;
     }
